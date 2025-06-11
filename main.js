@@ -48,3 +48,22 @@ const swiper = new Swiper('.swiper-container', {
     }
   }
 })
+
+
+// ScrollReveal: Animar elementos quando der scroll na página
+
+const scrollReveal = ScrollReveal({
+  origin: 'top',
+  distance: '30px',
+  duration: 700,
+  reset: true
+})
+
+scrollReveal.reveal(
+  `#home .text, #home .image,
+  #about .text, #about .image,
+  #services .header, #services .card,
+  #testimonials .header, #testimonials .testimonial,
+  #contact .text, #contact .links
+  `, {interval: 100}
+)
