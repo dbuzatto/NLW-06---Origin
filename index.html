@@ -9,6 +9,12 @@
     <!-- Icons -->
     <link rel="stylesheet" href="assets/fonts/style.css" />
 
+    <!-- Swiper -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+
     <!--Styles-->
     <link rel="stylesheet" href="style.css" />
 
@@ -144,62 +150,72 @@
       </section>
 
       <div class="divider-1"></div>
+
       <!-- TESTIMONIALS -->
-      <section class="section" id="testmonials">
-        <div class="container grid">
+      <section class="section" id="testimonials">
+        <div class="container">
           <header>
             <h2 class="title">Depoimentos de quem já passou por aqui</h2>
           </header>
-          <div class="testimonials">
-            <div class="testimonial">
-              <blockquote>
-                <p>
-                  <span>&ldquo;</span>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Praesentium eos sint perspiciatis dolor voluptas eaque rerum
-                </p>
-                <cite>
-                  <img src="assets/fotos/geovanni.jpg" alt="Foto do Geovanni" />
-                  Geovanni Muniz
-                </cite>
-              </blockquote>
+          <div class="testimonials swiper-container">
+            <div class="swiper-wrapper">
+              <div class="testimonial swiper-slide">
+                <blockquote>
+                  <p>
+                    <span>&ldquo;</span>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Praesentium eos sint perspiciatis dolor voluptas eaque rerum
+                  </p>
+                  <cite>
+                    <img
+                      src="assets/fotos/geovanni.jpg"
+                      alt="Foto do Geovanni"
+                    />
+                    Geovanni Muniz
+                  </cite>
+                </blockquote>
+              </div>
+
+              <div class="testimonial swiper-slide">
+                <blockquote>
+                  <p>
+                    <span>&ldquo;</span>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Praesentium eos sint perspiciatis dolor voluptas eaque rerum
+                  </p>
+                  <cite>
+                    <img src="assets/fotos/diogo.jpg" alt="Foto do Diogo" />
+                    Diogo Buzatto
+                  </cite>
+                </blockquote>
+              </div>
+              <div class="testimonial swiper-slide">
+                <blockquote>
+                  <p>
+                    <span>&ldquo;</span>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Praesentium eos sint perspiciatis dolor voluptas eaque rerum
+                  </p>
+                  <cite>
+                    <img src="assets/fotos/igor.jpg" alt="Foto do Igor" />
+                    Igor Altarugio
+                  </cite>
+                </blockquote>
+              </div>
             </div>
-            <div class="testimonial">
-              <blockquote>
-                <p>
-                  <span>&ldquo;</span>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Praesentium eos sint perspiciatis dolor voluptas eaque rerum
-                </p>
-                <cite>
-                  <img src="assets/fotos/diogo.jpg" alt="Foto do Diogo" />
-                  Diogo Buzatto
-                </cite>
-              </blockquote>
-            </div>
 
-            <div class="testimonial">
-              <blockquote>
-                <p>
-                  <span>&ldquo;</span>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Praesentium eos sint perspiciatis dolor voluptas eaque rerum
-                </p>
-                <cite>
-                  <img src="assets/fotos/igor.jpg" alt="Foto do Igor" />
-                  Igor Altarugio
-                </cite>
-              </blockquote>
-            </div>
-
-
-
+            <div class="swiper-pagination"></div>
           </div>
         </div>
       </section>
 
       <!-- CONTACT -->
     </main>
+
+    <!-- swiper -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- main.js -->
     <script src="main.js"></script>
   </body>
 </html>
