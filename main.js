@@ -18,10 +18,11 @@ for (const link of links) {
 }
 
 /* Muda o header quando der scroll */
-function changeHeaderWhenScroll() {
-  const header = document.querySelector('#header')
-  const navHeight = header.offsetHeight
 
+const header = document.querySelector('#header')
+const navHeight = header.offsetHeight
+
+function changeHeaderWhenScroll() {
   if (window.scrollY >= navHeight) {
     header.classList.add('scroll')
   } else {
@@ -50,15 +51,47 @@ function backToTop() {
   }
 }
 
+/* Menu ativo conforme a seção visível na página */
+const sections = document.querySelectorAll('main section[id]')
+function activateMenuAtCurrentSection() {
+  const checkpoint = window.pageYOffset + (window.innerHeight / 8) * 4
+
+  for (const section of sections) {
+    const sectionTop = section.offsetTop
+    const sectionHeight = section.offsetHeight
+    const sectionId = section.getAttribute('id')
+
+    const checkpointStart = checkpoint >= sectionTop
+    const checkpointEnd = checkpoint <= sectionTop + sectionHeight
+
+    if (checkpointStart && checkpointEnd) {
+      document
+        .querySelector('nav ul li a[href*=' + sectionId + ']')
+        .classList.add('active')
+    } else {
+      document
+        .querySelector('nav ul li a[href*=' + sectionId + ']')
+        .classList.remove('active')
+    }
+  }
+}
+
 /* Event Listener para scroll */
 window.addEventListener('scroll', () => {
   changeHeaderWhenScroll()
   backToTop()
+  activateMenuAtCurrentSection()
 })
 
 /* Testimonials carousel slider Swiper */
 const swiper = new Swiper('.swiper', {
   slidesPerView: 1,
+  speed: 600,
+  loop: true,
+  autoplay: {
+    delay: 4000,
+    disableOnInteraction: false
+  },
   pagination: {
     el: '.swiper-pagination',
     clickable: true

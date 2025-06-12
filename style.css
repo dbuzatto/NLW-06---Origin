@@ -436,6 +436,7 @@ nav.show div.icon-close {
   background: var(--base-color);
 }
 
+
 /*====  CONTACT ============================ */
 #contact .grid {
   gap: 4rem;
@@ -655,6 +656,11 @@ footer .social a:hover {
 
   footer .logo {
     font-size: 2.25rem;
+  }
+
+  .social {
+  display: flex;
+  gap: 30px;
   }
 }
 
