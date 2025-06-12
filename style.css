@@ -42,6 +42,7 @@ img {
   --body-font: 'DM Sans', sans-serif;
   --title-font-size: 1.875rem;
   --subtitle-font-size: 1rem;
+
 }
 
 /* ===========================================
@@ -611,5 +612,13 @@ footer .social a:hover {
 }
 
 
+/* RESPONSIVO */
 
-/* 4 video 45:30 */
+@media (min-width: 992px) {
+  :root {
+    --title-font-size: 2.25rem;
+  }
+}
+
+
+/* 5 video */

@@ -1,38 +1,62 @@
 /* Abre e fecha hamburger menu */
-
 const nav = document.querySelector('#header nav')
 const toggle = document.querySelectorAll('nav .toggle')
 
 for (const element of toggle) {
-  element.addEventListener('click', function () {
+  element.addEventListener('click', () => {
     nav.classList.toggle('show')
   })
 }
 
 /* Fecha o menu ao clicar em um item do menu */
-
 const links = document.querySelectorAll('nav ul li a')
 
 for (const link of links) {
-  link.addEventListener('click', function () {
+  link.addEventListener('click', () => {
     nav.classList.remove('show')
   })
 }
 
-// Mudar o header da página quando der scroll
-const header = document.querySelector('#header')
-const navHeight = header.offsetHeight
-window.addEventListener('scroll', function () {
+/* Muda o header quando der scroll */
+function changeHeaderWhenScroll() {
+  const header = document.querySelector('#header')
+  const navHeight = header.offsetHeight
+
   if (window.scrollY >= navHeight) {
-    // Scroll é maior que a altura do header
     header.classList.add('scroll')
   } else {
-    // Scroll é menor que a altura do header
     header.classList.remove('scroll')
   }
+}
+
+/* Mostra o botão de voltar ao topo e verifica se está sobre o footer */
+function backToTop() {
+  const backToTopButton = document.querySelector('.back-to-top')
+  const footer = document.querySelector('footer')
+
+  if (window.scrollY >= 560) {
+    backToTopButton.classList.add('show')
+  } else {
+    backToTopButton.classList.remove('show')
+  }
+
+  const footerTop = footer.getBoundingClientRect().top
+  const windowHeight = window.innerHeight
+
+  if (footerTop < windowHeight) {
+    backToTopButton.classList.add('footer-visible')
+  } else {
+    backToTopButton.classList.remove('footer-visible')
+  }
+}
+
+/* Event Listener para scroll */
+window.addEventListener('scroll', () => {
+  changeHeaderWhenScroll()
+  backToTop()
 })
 
-/* Testimonials carousel slider swiper */
+/* Testimonials carousel slider Swiper */
 const swiper = new Swiper('.swiper', {
   slidesPerView: 1,
   pagination: {
@@ -49,8 +73,7 @@ const swiper = new Swiper('.swiper', {
   }
 })
 
-// ScrollReveal: Animar elementos quando der scroll na página
-
+/* ScrollReveal: animar elementos ao rolar */
 const scrollReveal = ScrollReveal({
   origin: 'top',
   distance: '30px',
@@ -59,7 +82,8 @@ const scrollReveal = ScrollReveal({
 })
 
 scrollReveal.reveal(
-  `#home .text, #home .image,
+  `
+  #home .text, #home .image,
   #about .text, #about .image,
   #services .header, #services .card,
   #testimonials .header, #testimonials .testimonial,
@@ -68,28 +92,3 @@ scrollReveal.reveal(
   `,
   { interval: 100 }
 )
-
-
-// Back to top button
-const backToTopButton = document.querySelector('.back-to-top')
-const footer = document.querySelector('footer')
-
-window.addEventListener('scroll', function () {
-  // Mostrar ou esconder o botão
-  if (window.scrollY >= 560) {
-    backToTopButton.classList.add('show')
-  } else {
-    backToTopButton.classList.remove('show')
-  }
-
-  // Verificar se o botão está sobre o footer
-  const footerTop = footer.getBoundingClientRect().top
-  const windowHeight = window.innerHeight
-
-  if (footerTop < windowHeight) {
-    backToTopButton.classList.add('footer-visible')
-  } else {
-    backToTopButton.classList.remove('footer-visible')
-  }
-})
-
