@@ -63,7 +63,33 @@ scrollReveal.reveal(
   #about .text, #about .image,
   #services .header, #services .card,
   #testimonials .header, #testimonials .testimonial,
-  #contact .text, #contact .links
+  #contact .text, #contact .links, 
+  footer .brand, footer .social
   `,
   { interval: 100 }
 )
+
+
+// Back to top button
+const backToTopButton = document.querySelector('.back-to-top')
+const footer = document.querySelector('footer')
+
+window.addEventListener('scroll', function () {
+  // Mostrar ou esconder o botão
+  if (window.scrollY >= 560) {
+    backToTopButton.classList.add('show')
+  } else {
+    backToTopButton.classList.remove('show')
+  }
+
+  // Verificar se o botão está sobre o footer
+  const footerTop = footer.getBoundingClientRect().top
+  const windowHeight = window.innerHeight
+
+  if (footerTop < windowHeight) {
+    backToTopButton.classList.add('footer-visible')
+  } else {
+    backToTopButton.classList.remove('footer-visible')
+  }
+})
+
