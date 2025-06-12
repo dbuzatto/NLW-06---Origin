@@ -33,7 +33,7 @@ window.addEventListener('scroll', function () {
 })
 
 /* Testimonials carousel slider swiper */
-const swiper = new Swiper('.swiper-container', {
+const swiper = new Swiper('.swiper', {
   slidesPerView: 1,
   pagination: {
     el: '.swiper-pagination',
@@ -48,7 +48,6 @@ const swiper = new Swiper('.swiper-container', {
     }
   }
 })
-
 
 // ScrollReveal: Animar elementos quando der scroll na página
 
@@ -65,5 +64,6 @@ scrollReveal.reveal(
   #services .header, #services .card,
   #testimonials .header, #testimonials .testimonial,
   #contact .text, #contact .links
-  `, {interval: 100}
+  `,
+  { interval: 100 }
 )
